@@ -37,8 +37,10 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.70.8)
   - fmt (6.2.1)
   - glog (0.3.5)
+  - hermes-engine (0.70.8)
   - JWT (3.0.0-beta.14):
     - Base64 (~> 1.1.2)
+  - libevent (2.1.12)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -50,6 +52,12 @@ PODS:
     - DoubleConversion
     - fmt (~> 6.2.1)
     - glog
+  - RCT-Folly/Futures (2021.07.22.00):
+    - boost
+    - DoubleConversion
+    - fmt (~> 6.2.1)
+    - glog
+    - libevent
   - RCTRequired (0.70.8)
   - RCTTypeSafety (0.70.8):
     - FBLazyVector (= 0.70.8)
@@ -227,6 +235,17 @@ PODS:
     - React-logger (= 0.70.8)
     - React-perflogger (= 0.70.8)
     - React-runtimeexecutor (= 0.70.8)
+  - React-hermes (0.70.8):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2021.07.22.00)
+    - RCT-Folly/Futures (= 2021.07.22.00)
+    - React-cxxreact (= 0.70.8)
+    - React-jsi (= 0.70.8)
+    - React-jsiexecutor (= 0.70.8)
+    - React-jsinspector (= 0.70.8)
+    - React-perflogger (= 0.70.8)
   - React-jsi (0.70.8):
     - boost (= 1.76.0)
     - DoubleConversion
@@ -335,6 +354,8 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
+  - libevent (~> 2.1.12)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -346,6 +367,7 @@ DEPENDENCIES:
   - React-Core/RCTWebSocket (from `../node_modules/react-native/`)
   - React-CoreModules (from `../node_modules/react-native/React/CoreModules`)
   - React-cxxreact (from `../node_modules/react-native/ReactCommon/cxxreact`)
+  - React-hermes (from `../node_modules/react-native/ReactCommon/hermes`)
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
@@ -370,6 +392,7 @@ SPEC REPOS:
     - Base64
     - fmt
     - JWT
+    - libevent
     - SSZipArchive
 
 EXTERNAL SOURCES:
@@ -403,6 +426,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/React/FBReactNativeSpec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  hermes-engine:
+    :podspec: "../node_modules/react-native/sdks/hermes/hermes-engine.podspec"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -423,6 +448,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/React/CoreModules"
   React-cxxreact:
     :path: "../node_modules/react-native/ReactCommon/cxxreact"
+  React-hermes:
+    :path: "../node_modules/react-native/ReactCommon/hermes"
   React-jsi:
     :path: "../node_modules/react-native/ReactCommon/jsi"
   React-jsiexecutor:
@@ -478,7 +505,9 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: d8772db98ada3c2daf8f65e2105ada77bf209c02
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
+  hermes-engine: 0b19f33a9c2ec1dbdede3232606eeb1101db4cec
   JWT: ef71dfb03e1f842081e64dc42eef0e164f35d251
+  libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 35a7977a5a3cb2d3830c3fef7352b7b116115829
   RCTTypeSafety: 259790fb8b16c94e57e0d3d1e2479e69a2b93f50
@@ -489,6 +518,7 @@ SPEC CHECKSUMS:
   React-Core: 3021f04b6b1a2064952e166470a58db671ed65b1
   React-CoreModules: f569f295874d0864bfd7a686dad3f828f4e8813a
   React-cxxreact: a6c952ae24061777510f7e60b808b673e624009e
+  React-hermes: be32d1db90d052cc025a38ec2ea4e1a493d33c6a
   React-jsi: 3d7bafe69dddd780fb3527b7f939dfcbfd6790b5
   React-jsiexecutor: bc8556d76f83a1a9075cdee207aad7c0b7b30a33
   React-jsinspector: 5e5497c844f2381e8648ec3a7d0ad25b3f27f23e
